@@ -67,3 +67,8 @@ def plot_lead(signal_mV, ax, Y_max=None, Y_min=None, line_width = 1, sample_rate
             #markeredgecolor='black',  # Цвет границы маркеров
             #markeredgewidth=0  # Толщина границы маркеров (0 — без границы))
             )
+
+
+def plot_delineation(ax, delineation, Y_max, color='red', sample_rate=500):
+    for x in delineation:
+        ax.axvline(x=x/sample_rate, ymax=Y_max, ymin=0, color=color, linewidth=0.5)
